@@ -16,7 +16,7 @@ const BlogList = ({ blogs, filter }) => {
           author={blog.author}
           title={blog.title}
           subtitle={blog.subtitle}
-          date={moment(blog.date).format("LLL")}
+          date={moment(blog.date).format("LL")}
           slug={blog.slug}
           link={{ href: "/blogs/[slug]", as: `/blogs/${blog.slug}` }}
         />
@@ -27,7 +27,7 @@ const BlogList = ({ blogs, filter }) => {
           author={blog.author}
           title={blog.title}
           subtitle={blog.subtitle}
-          date={moment(blog.date).format("LLL")}
+          date={moment(blog.date).format("LL")}
           image={blog.coverImage}
           slug={blog.slug}
           link={{ href: "/blogs/[slug]", as: `/blogs/${blog.slug}` }}

@@ -23,7 +23,7 @@ export default function BlogHeader({
       </h1>
       <h2 className="blog-detail-header-subtitle mb-3">{subtitle}</h2>
       {coverImage && (
-        <img className="img-fluid rounded" src={coverImage} alt="" />
+        <img className="img-fluid rounded" src={coverImage} alt="cover-image" />
       )}
     </div>
   );
