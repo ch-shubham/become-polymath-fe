@@ -51,6 +51,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
       blog,
       preview,
     },
+    revalidate: 1,
   };
 }
 
