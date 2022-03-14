@@ -1,4 +1,4 @@
-import { getBlogBySlug, getPaginatedBlogs } from "lib/api";
+import { getBlogBySlug } from "lib/api";
 export default async function enablePreview(req, res) {
   if (
     req.query.secret !== process.env.SANITY_PREVIEW_SECRET ||
@@ -7,7 +7,6 @@ export default async function enablePreview(req, res) {
     return res.status(401).json({ message: "Invalid Token" });
   }
 
-  console.log(req.query.slug);
   const blog = await getBlogBySlug(req.query.slug, true);
 
   if (!blog) {
