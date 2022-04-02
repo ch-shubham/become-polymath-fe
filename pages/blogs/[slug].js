@@ -7,8 +7,16 @@ import moment from "moment";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import PreviewAlert from "components/PreviewAlert";
+import { analytics } from "userFirebase/config";
+import { useEffect } from "react";
 const BlogDetail = ({ blog, preview }) => {
   const router = useRouter();
+
+  useEffect(() => {
+    if (process.env.NODE_ENV === "production") {
+      analytics().logEvent("blog-page-visited");
+    }
+  }, []);
 
   if (!router.isFallback && !blog?.slug) {
     <ErrorPage />;
